@@ -55,7 +55,7 @@ Things you may want to cover:
 - has_many :movie_tags
 - has_many :tags, through: :movie_tags
 
-## tagテーブル
+## tagsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |text|text|null:false|
@@ -63,14 +63,12 @@ Things you may want to cover:
 - has_many :movie_tags
 - has_many :movie, through: :movie_tags
 
-## テーブル
+## movie_tagsテーブル
 |Column|Type|Options|
 |------|----|-------|
-
+|movie_id|integer|null: false, foreign_key: true|
+|tag_id|integer|null: false, foreign_key: true|
 ### Association
+- belongs_to :movie
+- belongs_to :tag
 
-## テーブル
-|Column|Type|Options|
-|------|----|-------|
-
-### Association
