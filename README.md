@@ -37,6 +37,7 @@ Things you may want to cover:
 |------|----|-------|
 |title|string|null: false|
 |review|text|null: false|
+|point|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |movie_id|integer|null: false, foreign_key: true|
 ### Association
@@ -48,7 +49,11 @@ Things you may want to cover:
 |------|----|-------|
 |title|string|null: false|
 |image|string||
+|synopsis|text|null: false|
 ### Association
+- has_many :reviews
+- has_many :movie_tags
+- has_many :tags, through: :movie_tags
 
 ## テーブル
 |Column|Type|Options|
