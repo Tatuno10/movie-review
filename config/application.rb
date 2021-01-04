@@ -34,11 +34,15 @@ end
 ### Association
 - has_many :reviews
 
-## テーブル
+## reviewsテーブル
 |Column|Type|Options|
 |------|----|-------|
-
+|title|string|null: false|
+|review|text|null: false|
+|user_id|integer|null: false, foreign_key: true|
 ### Association
+- belongs_to :user
+- belongs_to :movie
 
 ## テーブル
 |Column|Type|Options|
