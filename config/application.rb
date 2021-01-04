@@ -40,6 +40,7 @@ end
 |title|string|null: false|
 |review|text|null: false|
 |user_id|integer|null: false, foreign_key: true|
+|movie_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :movie
