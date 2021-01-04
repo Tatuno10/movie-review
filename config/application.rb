@@ -24,3 +24,39 @@ module MovieReview
   end
 end
 
+
+## テーブル
+|Column|Type|Options|
+|------|----|-------|
+
+### Association
+
+## テーブル
+|Column|Type|Options|
+|------|----|-------|
+
+### Association
+
+## テーブル
+|Column|Type|Options|
+|------|----|-------|
+
+### Association
+
+## テーブル
+|Column|Type|Options|
+|------|----|-------|
+
+### Association
+
+## テーブル
+|Column|Type|Options|
+|------|----|-------|
+
+### Association
+
+## テーブル
+|Column|Type|Options|
+|------|----|-------|
+
+### Association
