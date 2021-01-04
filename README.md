@@ -39,7 +39,7 @@ Things you may want to cover:
 |review|text|null: false|
 |point|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
-|movie_id|integer|null: false, foreign_key: true, unique: true|
+|movie_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :movie
