@@ -7,11 +7,19 @@
 }
 
 .Header {
-  display: block;
+  display: flex;
   height: 90px;
   width: 100vw;
   background-color:#222222;
   color: white;
+  &__title{
+    padding: 30px;
+    font-size: 20px;
+  }
+  &__search{
+    background-color: lightgrey;
+    
+  }
 }
 
 .Side-bar {
