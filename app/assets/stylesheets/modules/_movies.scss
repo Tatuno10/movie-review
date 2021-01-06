@@ -17,8 +17,13 @@
     font-size: 20px;
   }
   &__search{
-    background-color: lightgrey;
-    
+    background-color: white;
+    margin: 35px 10px;
+    padding: 0px 30px;
+    color: black;
+  }
+  &__user-function{
+    margin: 30px;
   }
 }
 
@@ -26,6 +31,15 @@
   height: calc(100vh - 90px);
   width: 200px;
   background-color: lightgrey;
+  .Movie-ranking{
+    color: red;
+  }
+  .New-movie {
+    color: yellow;
+  }
+  .Tag-list {
+    color: blue;
+  }
 }
 
 .Main {
