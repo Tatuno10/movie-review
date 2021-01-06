@@ -32,13 +32,19 @@
   width: 200px;
   background-color: lightgrey;
   .Movie-ranking{
+    margin: 10px;
     color: red;
+    background-color: coral;
   }
   .New-movie {
+    margin: 10px;
     color: yellow;
+    background-color: darkkhaki;
   }
   .Tag-list {
+    margin: 10px;
     color: blue;
+    background-color: deepskyblue;
   }
 }
 
@@ -46,4 +52,13 @@
   height: calc(100vh - 90px);
   width: calc(100vw - 200px);
   background-color: white;
+  .Movie{
+    background-color: brown;
+    margin: 10px;
+    height: 400px;
+    display: flex;
+  }
+  .Review{
+    background-color: cadetblue;
+  }
 }
