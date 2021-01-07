@@ -29,7 +29,7 @@
 
 .Side-bar {
   height: calc(100vh - 90px);
-  width: 200px;
+  width: 30vw;
   background-color: lightgrey;
   .Movie-ranking{
     margin: 10px;
@@ -45,20 +45,36 @@
     margin: 10px;
     color: blue;
     background-color: deepskyblue;
+    overflow: scroll;
   }
 }
 
 .Main {
   height: calc(100vh - 90px);
-  width: calc(100vw - 200px);
+  width: calc(100vw - 30vw);
   background-color: white;
+  overflow: scroll;
   .Movie{
     background-color: brown;
     margin: 10px;
     height: 400px;
     display: flex;
   }
-  .Review{
+  .Review-list{
     background-color: cadetblue;
+    margin: 10px;
+    padding: 5px;
+    .Review-box{
+      &__title{
+        background-color: floralwhite;
+        padding: 5px;
+        margin: 5px;
+      }
+      &__text{
+        height: 50px;
+        background-color: gray;
+        margin: 5px;
+      }
+    }
   }
 }
