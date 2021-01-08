@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.Header {
+  display: flex;
+  height: 90px;
+  width: 100vw;
+  background-color:#222222;
+  color: white;
+  &__title{
+    padding: 30px;
+    font-size: 20px;
+  }
+  &__search{
+    background-color: white;
+    margin: 35px 10px;
+    padding: 0px 30px;
+    color: black;
+  }
+  &__user-function{
+    margin: 30px;
+  }
+}
+
+.Side-bar {
+  height: calc(100vh - 90px);
+  width: 200px;
+  background-color: lightgrey;
+  .Movie-ranking{
+    margin: 10px;
+    color: red;
+    background-color: coral;
+  }
+  .New-movie {
+    margin: 10px;
+    color: yellow;
+    background-color: darkkhaki;
+  }
+  .Tag-list {
+    margin: 10px;
+    color: blue;
+    background-color: deepskyblue;
+    overflow: scroll;
+  }
+  .Movie-registration {
+    margin: 10px;
+    color: black;
+    background-color: white;
+  }
+}
+
+.Main {
+  width: calc(100vw - 200px);
+  height: calc(100vh - 90px);
+  overflow: scroll;
+  .Movie-choice{
+    background-color: gray;
+    &__list {
+      display: flex;
+      overflow-x: scroll;
+
+    }
+  }
+  .New-movie {
+    background-color: white;
+    &__list {
+      display: flex;
+      overflow-x: scroll;
+    }
+  }
+  .Movie-list {
+    background-color: gray;
+    &__list {
+      display: flex;
+      overflow-x: scroll;
+    }
+  }
+}
+
+.ain {
+  height: calc(100vh - 90px);
+  width: calc(100vw - 30vw);
+  background-color: white;
+  overflow: scroll;
+  .Movie{
+    background-color: brown;
+    margin: 10px;
+    height: 400px;
+    display: flex;
+  }
+  .Review-list{
+    background-color: cadetblue;
+    margin: 10px;
+    padding: 5px;
+    .Review-box{
+      &__title{
+        background-color: floralwhite;
+        padding: 5px;
+        margin: 5px;
+      }
+      &__text{
+        height: 50px;
+        background-color: gray;
+        margin: 5px;
+      }
+    }
+  }
+}
+.Movie-box {
+  width: 40vw;
+}
