@@ -48,6 +48,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |title|text|null: false|
+|title-ruby|text|null: false|
 |image|string||
 |synopsis|text|null: false|
 ### Association
