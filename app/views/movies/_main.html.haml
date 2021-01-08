@@ -1,36 +1,33 @@
 .Main
-  .Movie
-    .Movie__photo
-      Movie__photo
-      = link_to
-    .Movie__datails
-      .Movie__title
-        Movie__title
-      .Movie__details
-        Movie__datails
-  .Review-list
-    .Review__box
-      .Review-box__title
-        review__title
-      .Review-box__text
-        review__text
-    .Review__box
-      .Review-box__title
-        review__title
-      .Review-box__text
-        review__text
-    .Review__box
-      .Review-box__title
-        review__title
-      .Review-box__text
-        review__text
-    .Review__box
-      .Review-box__title
-        review__title
-      .Review-box__text
-        review__text
-  .Review-form
-    .Review-form__inputbox
-      review__inputbox
-    .Review-form__input-btn
-      input-btn
+  %h1.Movie-choice
+    おすすめの映画
+    .Movie-choice__list
+      .Movie-box
+        .Movie-box__title
+          鬼滅の刃　無限列車編
+        .Movie-box__photo
+          = image_tag "kimetunoyaiba.jpg", alt: "", width: "100", height: "200"
+      .Movie-box
+        .Movie-box__title
+          アナイアレイション 
+        .Movie-box__photo
+          = image_tag "anaiareisyonn.jpg", alt: "", width: "100", height: "200"
+      .Movie-box
+        .Movie-box__title
+          ラブ・デス・ロボット
+        .Movie-box__photo
+          = image_tag "lovedeath.jpg", alt: "", width: "100", height: "200"
+      .Movie-box
+        .Movie-box__title
+          武器人間
+        .Movie-box__photo
+          = image_tag "bukininngenn_.jpg", alt: "", width: "100", height: "200"
+      .Movie-box
+        .Movie-box__title
+          タッカーとデイル
+        .Movie-box__photo
+          = image_tag "takka-deiru.jpg", alt: "", width: "100", height: "200"
+  .New-movie
+    新着映画
+    .New-movie__list
+  .Movie-list

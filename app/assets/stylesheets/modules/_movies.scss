@@ -50,6 +50,18 @@
 }
 
 .Main {
+  width: 70vw;
+  height: calc(100vh - 90px);
+  .Movie-choice{
+    background-color: gray;
+    &__list {
+      display: flex;
+      overflow-x: scroll;
+    }
+  }
+}
+
+.ain {
   height: calc(100vh - 90px);
   width: calc(100vw - 30vw);
   background-color: white;
