@@ -6,8 +6,7 @@
         .Movie-box
           .Movie-box__title
             = movie.title
-          .Movie-box__photo
-            = image_tag message.image.url, if movie.image.present?
+          = image_tag movie.image,class: 'Movie-box__photo' size: "100*200", alt: "test"
   .New-movie
     新着映画
     .New-movie__list
