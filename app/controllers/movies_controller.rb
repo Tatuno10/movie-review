@@ -11,6 +11,13 @@ class MoviesController < ApplicationController
     Movie.create(movie_params)
   end
 
+  def edit
+  end
+
+  def show
+    
+  end
+
   private
 
   def movie_params
