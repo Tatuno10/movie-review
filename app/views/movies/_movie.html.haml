@@ -1,36 +1,22 @@
 .Main
   .Movie
     .Movie__photo
-      Movie__photo
-      = link_to
+      = image_tag @movie.image.url width: 200, height: 300
     .Movie__datails
       .Movie__title
-        Movie__title
+        = @movie.title
       .Movie__details
-        Movie__datails
+        = @movie.synopsis
   .Review-list
-    .Review__box
-      .Review-box__title
-        review__title
-      .Review-box__text
-        review__text
-    .Review__box
-      .Review-box__title
-        review__title
-      .Review-box__text
-        review__text
-    .Review__box
-      .Review-box__title
-        review__title
-      .Review-box__text
-        review__text
-    .Review__box
-      .Review-box__title
-        review__title
-      .Review-box__text
-        review__text
-  .Review-form
-    .Review-form__inputbox
-      review__inputbox
-    .Review-form__input-btn
-      input-btn
+    - @reviews.each do |review|
+      .Review__box
+        .Review-box__title
+          = review.title
+        .Review-box__text
+          = review.review
+    .Review-form
+      = form_with model: [@movie, @review], html: {class: "Review-form__review-form"}, local: true do |f|
+        .Review_form__input-box
+          = f.text_field :title, class: "Review-form__title-form", placeholder: 'title'
+          = f.text_area :review , class: "Review-form__text-form", placeholder: "reciew-text"
+          = f.submit 'SEND', class: "Review-form__submit-btn"
