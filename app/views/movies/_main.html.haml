@@ -11,7 +11,7 @@
   .New-movie
     新着映画
     .New-movie__list
-      - @movie.each do |movie|
+      - @movieup.each do |movie|
         .Movie-box
           = link_to movie_path(movie.id),method: :get, class: "Movie-box__title" do
             = movie.title
