@@ -4,7 +4,7 @@
     .Movie-choice__list
       - @movie.each do |movie|
         .Movie-box
-          = link_to movie_path(@movie),method: :get, class: "Movie-box__title" do
+          = link_to movie_path(movie.id),method: :get, class: "Movie-box__title" do
             = movie.title
           .Movie-box__photo
             = image_tag movie.image.url, alt: "test", width: "100", height: "200"

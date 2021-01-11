@@ -1,13 +1,12 @@
 .Main
   .Movie
     .Movie__photo
-      Movie__photo
-      = link_to
+      = image_tag @movie.image.url width: 200, height: 300
     .Movie__datails
       .Movie__title
-        Movie__title
+        = @movie.title
       .Movie__details
-        Movie__datails
+        = @movie.synopsis
   .Review-list
     .Review__box
       .Review-box__title
