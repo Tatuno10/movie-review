@@ -1,20 +1,17 @@
 .Side-bar
   .Movie-ranking
     人気ランキング
-    .Movie-ranking__rank1
-      
-    .Movie-ranking__rank2
-      武器人間
-    .Movie-ranking__rank3
-      アナイアレイション
+    .Movie-ranking__list
+      - @movie.first(5).each do |movie|
+        .Movie-ranking-list
+          = link_to movie_path(movie.id), method: :get, class: "Movie-ranking-list__title" do
+            = movie.title
   .New-movie
     新着映画
-    .New-movie__new1
-      タッカーとデイル
-    .New-movie__new2
-      武器人間
-    .New-movie__new3
-      ラブ・デス・ロボット
+    .New-movie-list
+      - @movieup.first(5).each do |movie|
+        = link_to movie_path(movie.id), method: :get, class: "New-movie-list__title" do
+          = movie.title
   .Tag-list
     タグリスト
     .tag-list__tag
