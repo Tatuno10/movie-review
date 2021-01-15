@@ -2,7 +2,7 @@
   %h1.Movie-choice
     おすすめの映画
     .Movie-choice__list
-      - @movies.each do |movie|
+      - @movies.first(5).each do |movie|
         .Movie-box
           = link_to movie_path(movie.id),method: :get, class: "Movie-box__title" do
             = movie.title
@@ -11,7 +11,7 @@
   .New-movie
     新着映画
     .New-movie__list
-      - @moviesup.each do |movie|
+      - @moviesup.first(5).each do |movie|
         .Movie-box
           = link_to movie_path(movie.id),method: :get, class: "Movie-box__title" do
             = movie.title
