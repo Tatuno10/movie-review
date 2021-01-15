@@ -94,7 +94,7 @@
 .Show-main {
   height: calc(100vh - 90px);
   width: 70vw;
-  background-color: white;
+  background-color: gray;
   overflow: scroll;
   .Movie{
     background-color: brown;
@@ -108,6 +108,8 @@
     padding: 5px;
     .Review-box {
       background-color: white;
+      border: solid 1px black;
+      margin-bottom: 5px;
       &__title{
         border: 1px, cadetblue, solid;
       }
