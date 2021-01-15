@@ -1,4 +1,4 @@
-.Main
+.Show-main
   .Movie
     .Movie__photo
       = image_tag @movie.image.url width: 200, height: 300
@@ -9,14 +9,14 @@
         = @movie.synopsis
   .Review-list
     - @reviews.each do |review|
-      .Review__box
+      .Review-box
         .Review-box__title
           = review.title
         .Review-box__text
           = review.review
-    .Review-form
-      = form_with model: [@movie, @review], html: {class: "Review-form__review-form"}, local: true do |f|
-        .Review_form__input-box
-          = f.text_field :title, class: "Review-form__title-form", placeholder: 'title'
-          = f.text_area :review , class: "Review-form__text-form", placeholder: "reciew-text"
-          = f.submit 'SEND', class: "Review-form__submit-btn"
+  .Review-form
+    = form_with model: [@movie, @review], html: {class: "Review-form__review-form"}, local: true do |f|
+      .Input-box
+        = f.text_field :title, class: "Input-box__title-form", placeholder: 'title'
+        = f.text_area :review , class: "Input-box__text-form", placeholder: "reciew-text"
+        = f.submit 'SEND', class: "Input-box__submit-btn"

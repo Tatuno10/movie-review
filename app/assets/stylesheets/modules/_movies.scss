@@ -30,7 +30,7 @@
 
 .Side-bar {
   height: calc(100vh - 90px);
-  width: 200px;
+  width: 30vw;
   background-color: lightgrey;
   .Movie-ranking{
     margin: 10px;
@@ -56,36 +56,44 @@
 }
 
 .Main {
-  width: calc(100vw - 200px);
+  width: 70vw;
   height: calc(100vh - 90px);
   overflow: scroll;
   .Movie-choice{
     background-color: gray;
+    height: 320px;
     &__list {
+      height: 300px;
       display: flex;
       overflow-x: scroll;
-
+      justify-content: space-between;
     }
   }
   .New-movie {
+    height: 320px;
     background-color: white;
     &__list {
+      height: 300px;
       display: flex;
       overflow-x: scroll;
+      justify-content: space-between;
     }
   }
   .Movie-list {
+    height: 320px;
     background-color: gray;
     &__list {
+      height: 290px;
       display: flex;
       overflow-x: scroll;
+      justify-content: space-between;
     }
   }
 }
 
-.ain {
+.Show-main {
   height: calc(100vh - 90px);
-  width: calc(100vw - 30vw);
+  width: 70vw;
   background-color: white;
   overflow: scroll;
   .Movie{
@@ -98,20 +106,44 @@
     background-color: cadetblue;
     margin: 10px;
     padding: 5px;
-    .Review-box{
+    .Review-box {
+      background-color: white;
       &__title{
-        background-color: floralwhite;
-        padding: 5px;
-        margin: 5px;
+        border: 1px, cadetblue, solid;
       }
       &__text{
-        height: 50px;
-        background-color: gray;
-        margin: 5px;
+
+      }
+    }
+  }
+  .Review-form {
+    height: 120px;
+    margin: 10px;
+    padding: 5px;
+    background-color: chocolate;
+    .Input-box {
+      display: flex;
+      flex-direction: column;
+      &__title-form {
+        width: calc(70vw - 30px);
+      }
+      &__text-form {
+        width: calc(70vw - 30px);
+        margin-top: 5px;
+      }
+      &__submit-btn {
+        background-color: white;
+        width: 50px;
       }
     }
   }
 }
 .Movie-box {
-  width: 40vw;
+  
+  width: 200px;
+  margin: 0px, 20px;
+    &__title {
+      text-align: center;
+      color: black;
+    }
 }
