@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
   def index
-    @movie = Movie.all
-    @movieup = Movie.order("id DESC")
+    @movies = Movie.all
+    @moviesup = Movie.order("id DESC")
   end
 
   def new
@@ -16,6 +16,8 @@ class MoviesController < ApplicationController
   end
 
   def show
+    @movies = Movie.all
+    @moviesup = Movie.order("id DESC")
     @movie = Movie.find(params[:id])
     @reviews = Review.all
     @review = Review.new
