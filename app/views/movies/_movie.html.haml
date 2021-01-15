@@ -11,12 +11,14 @@
     - @movie.reviews.each do |review|
       .Review-box
         .Review-box__title
+          Title
           = review.title
         .Review-box__text
+          Review
           = review.review
   .Review-form
     = form_with model: [@movie, @review], html: {class: "Review-form__review-form"}, local: true do |f|
       .Input-box
         = f.text_field :title, class: "Input-box__title-form", placeholder: 'title'
-        = f.text_area :review , class: "Input-box__text-form", placeholder: "reciew-text"
-        = f.submit 'SEND', class: "Input-box__submit-btn"
+        = f.text_area :review , class: "Input-box__text-form", placeholder: "review-text"
+        = f.submit 'POST', class: "Input-box__submit-btn"
