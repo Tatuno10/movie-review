@@ -8,7 +8,7 @@
       .Movie__details
         = @movie.synopsis
   .Review-list
-    - @reviews.each do |review|
+    - @movie.reviews.each do |review|
       .Review-box
         .Review-box__title
           = review.title
