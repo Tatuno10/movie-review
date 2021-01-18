@@ -1,4 +1,6 @@
 class MoviesController < ApplicationController
+before_action:
+
   def index
     @movies = Movie.all
     @moviesup = Movie.order("id DESC")
