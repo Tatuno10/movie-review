@@ -25,6 +25,7 @@ before_action :movies, only: [:index, :show]
   private
 
   def movies
+    @tag = Tag.all
     @movies = Movie.all
     @moviesup = Movie.order("id DESC")
   end

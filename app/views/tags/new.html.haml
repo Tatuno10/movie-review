@@ -1,0 +1,6 @@
+.New-movie
+    %h3 "投稿する"
+    = form_with model: [@tag], html: {class: "New-movie__form"}, local: true do |f|
+        = f.text_field :name, class: 'New-tag__name', placeholder: 'タグの名前'
+        = f.text_field :ancestry, class: 'New-tag__ancestry', placeholder: 'ancestry'
+        = f.submit 'NEW', class: 'New-tag__submit-btn'
