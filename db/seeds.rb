@@ -6,10 +6,19 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-  horror = Tag.create(:name=>"ホラー")
+  thriller = Tag.create(:name=>"スリラー")
+  comedy = Tag.create(:name=>"コメディ")
+  action = Tag.create(:name=>"アクション")
+  sf = Tag.create(:name=>"SF")
+  anime = Tag.create(:name=>"アニメ")
+  adventure = Tag.create(:name=>"アドベンチャー")
+  suspense = Tag.create(:name=>"サスペンス")
+  youth = Tag.create(:name=>"青春")
 
-  horror_comedy = horror.children.create(:name=>"ギャグホラー")
+  thriller_horror = thriller.children.create(:name=>"ホラー")
 
-  horror_comedy_horror = horror_comedy.children.create(:name=>"ギャグホラーホラー")
+  thriller_horror.children.create(:name=>"スプラッター")
+  thriller_horror.children.create(:name=>"サイコホラー")
+  thriller_horror.children.create(:name=>"オカルト")
+  thriller_horror.children.create(:name=>"モンスター")
 
-  horror_comedy_horror.children.create(:name=>"長い")
