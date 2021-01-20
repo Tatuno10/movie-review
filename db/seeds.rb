@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+  horror = Tag.create(:name=>"ホラー")
+
+  horror_comedy = horror.children.create(:name=>"ギャグホラー")
+
+  horror_comedy_horror = horror_comedy.children.create(:name=>"ギャグホラーホラー")
+
+  horror_comedy_horror.children.create(:name=>"長い")

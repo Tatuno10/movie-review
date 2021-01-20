@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
+before_action :movies, only: [:index, :show]
+
   def index
-    @movie = Movie.all
-    @movieup = Movie.order("id DESC")
   end
 
   def new
@@ -20,8 +20,15 @@ class MoviesController < ApplicationController
     @reviews = Review.all
     @review = Review.new
   end
+  
 
   private
+
+  def movies
+    @tag = Tag.all
+    @movies = Movie.all
+    @moviesup = Movie.order("id DESC")
+  end
 
   def movie_params
     params.require(:movie).permit(:title, :titleruby, :synopsis, :image)
