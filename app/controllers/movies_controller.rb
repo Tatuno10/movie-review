@@ -13,6 +13,11 @@ before_action :movies, only: [:index, :show]
   end
 
   def edit
+    
+  end
+
+  def update
+    
   end
 
   def show
@@ -31,6 +36,6 @@ before_action :movies, only: [:index, :show]
   end
 
   def movie_params
-    params.require(:movie).permit(:title, :titleruby, :synopsis, :image)
+    params.require(:movie).permit(:title, :titleruby, :synopsis, :image, tag_ids: [])
   end
 end

@@ -5,4 +5,5 @@
         = f.text_field :titleruby, class: 'New-movie__titleruby-form', placeholder: 'ルビをひらがなで入力してください'
         = f.text_area :synopsis, class: 'New-movie__synopsis-form', placeholder: '映画の詳細を入力してください'
         = f.file_field :image, class: 'New-movie__image-form'
+        = f.collection_check_boxes :tag_ids, Tag.all, :id, :name
         = f.submit 'NEW', class: 'New-movie__submit-btn'
