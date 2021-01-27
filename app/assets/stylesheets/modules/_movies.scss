@@ -47,6 +47,11 @@
     color: blue;
     background-color: deepskyblue;
     overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    &__tag {
+      color: black;
+    }
   }
   .Movie-registration {
     margin: 10px;
