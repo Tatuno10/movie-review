@@ -19,11 +19,12 @@
       -if tag.root? 
         .Tag-list__tag
           = link_to "#" do
-            = tag.name
+            = tag.name 
           - if tag.children?
             - tag.children.each do |tag|
               .Tag-list__child-tag
                 = link_to "#"do
+                  %span
                   = tag.name
                 -if tag.children?
                   -tag.children.each do |tag|
