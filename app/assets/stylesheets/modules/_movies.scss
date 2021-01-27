@@ -32,6 +32,7 @@
   height: calc(100vh - 90px);
   width: 30vw;
   background-color: lightgrey;
+  overflow: scroll;
   .Movie-ranking{
     margin: 10px;
     color: red;
@@ -104,8 +105,21 @@
   .Movie{
     background-color: brown;
     margin: 10px;
-    height: 400px;
-    display: flex;
+    height: 440px;
+    &-title {
+      height: 40px;
+      color: white;
+      background-color: black;
+      &__titleruby {
+        font-size: 10px;
+      }
+      &__title {
+        font-size: 20px;
+      }
+    }
+    &__details {
+      display: flex;
+    }
   }
   .Review-list{
     background-color: cadetblue;
