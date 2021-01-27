@@ -14,8 +14,18 @@
           = movie.title
   .Tag-list
     タグリスト
-    - @tag.first(5).each do |tag|
-      = tag.name
+    - @tag.each do |tag|
+      -if tag.root? 
+        .Tag-list__tag
+          = tag.name
+          - if tag.children?
+            - tag.children.each do |tag|
+              .Tag-list__child-tag
+                = tag.name
+                -if tag.children?
+                  -tag.children.each do |tag|
+                    .Tag-list__garndchild-tag
+                      = tag.name
   = link_to new_movie_path, class: "Movie-registration" do
     映画登録
   = link_to new_tag_path, class: "Movie-registration" do
