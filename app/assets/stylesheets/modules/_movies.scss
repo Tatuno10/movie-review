@@ -120,6 +120,19 @@
     &__details {
       display: flex;
     }
+    &__detail {
+      width: 100%;
+    }
+    &__synopsis {
+      background-color: white;
+      height: 370px;
+      overflow: scroll;
+    }
+    &__category {
+      color: white;
+      background-color: black;
+      height: 30px;
+    }
   }
   .Review-list{
     background-color: cadetblue;
