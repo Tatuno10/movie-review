@@ -129,13 +129,14 @@ a {
     }
     &__synopsis {
       background-color: white;
-      height: 370px;
+      height: 350px;
       overflow: scroll;
     }
     &__category {
       color: white;
       background-color: black;
-      height: 30px;
+      height: 50px;
+      overflow: scroll;
     }
   }
   .Review-list{
