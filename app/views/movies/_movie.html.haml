@@ -13,11 +13,8 @@
           = @movie.synopsis
         .Movie__category
           - @movie.tags.each do |tag|
-            -nums = tag.path_ids
-            -tags = Tag.where(id:nums)
-            - tags.each do |tag|
-              = tag.name 
-              >
+            = tag.name 
+              
   .Review-list
     - @movie.reviews.each do |review|
       .Review-box
