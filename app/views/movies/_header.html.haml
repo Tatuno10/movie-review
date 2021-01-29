@@ -4,5 +4,10 @@
   .Header__search
     search-box
   .Header__user-function
-    user-name
-    logout
+    -if user_signed_in? 
+      %h2 ログインしています
+      = link_to "log_out", destroy_user_session_path, method: :delete
+    -else 
+      %h2 ログインしていません
+      = link_to "create_acount", new_user_registration_path
+      = link_to "log_in", new_user_session_path
