@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(version: 2021_02_12_024835) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "preferences", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "category1_id"
+    t.integer "category2_id"
+    t.integer "category3_id"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_preferences_on_user_id"
+  end
+
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.text "review", null: false
@@ -63,5 +73,6 @@ ActiveRecord::Schema.define(version: 2021_02_12_024835) do
 
   add_foreign_key "movie_tags", "movies"
   add_foreign_key "movie_tags", "tags"
+  add_foreign_key "preferences", "users"
   add_foreign_key "reviews", "movies"
 end
