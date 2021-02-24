@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_18_022252) do
+ActiveRecord::Schema.define(version: 2021_02_12_024835) do
 
   create_table "movie_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "movie_id"
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(version: 2021_01_18_022252) do
     t.text "synopsis", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "preferences", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "category1_id"
+    t.integer "category2_id"
+    t.integer "category3_id"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_preferences_on_user_id"
   end
 
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -63,5 +73,6 @@ ActiveRecord::Schema.define(version: 2021_01_18_022252) do
 
   add_foreign_key "movie_tags", "movies"
   add_foreign_key "movie_tags", "tags"
+  add_foreign_key "preferences", "users"
   add_foreign_key "reviews", "movies"
 end
