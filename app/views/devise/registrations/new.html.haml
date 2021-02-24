@@ -1,0 +1,24 @@
+%h2 Sign up
+
+= form_with model:@user, url: user_registration_path, local: true do |f| 
+
+  .field
+    = f.label :名前
+    = f.text_field :name, autofocus: true, maxlength: "6" 
+
+  
+  .field
+    = f.label :メールアドレス
+    = f.email_field :email, autofocus: true, autocomplete: "email" 
+
+  .field
+    = f.label :パスワード
+    = f.password_field :password, autocomplete: "new-password" 
+
+  .field
+    = f.label :"パスワード(再入力)"
+    = f.password_field :password_confirmation, autocomplete: "new-password" 
+
+  .actions
+    = f.submit "NEXT" 
+= render "devise/shared/links" 

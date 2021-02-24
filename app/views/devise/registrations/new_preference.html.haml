@@ -1,0 +1,14 @@
+%h2住所情報登録
+
+= form_with model: @prefernce, local: true  do |f| 
+  .field
+    = f.label :好きなカテゴリー１
+    = f.collection_select :category_id1, Tag.all, :id, :name
+  .field
+    = f.label :好きなカテゴリー２
+    = f.collection_select :category_id2, Tag.all, :id, :name
+  .field
+    = f.label :好きなカテゴリー３
+    = f.collection_select :category_id3, Tag.all, :id, :name
+  .actions
+    = f.submit "Sign up" 
