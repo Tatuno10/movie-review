@@ -11,7 +11,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    binding.pry
     @user = User.new(sign_up_params)
     unless @user.valid?
       flash.now[:alert] = @user.errors.full_messages
@@ -70,9 +69,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   
   def preference_params
     params.require(:preference).permit(
-      :category_id1,
-      :category_id2, 
-      :category_id3
+      :category1_id,
+      :category2_id, 
+      :category3_id
     )
   end
   # If you have extra params to permit, append them to the sanitizer.
