@@ -3,7 +3,8 @@ class CreatePreferences < ActiveRecord::Migration[6.0]
     create_table :preferences do |t|
       t.integer :category1_id
       t.integer :category2_id
-      t.integer :category3_id
+      t.integer :genre1_id
+      t.integer :genre2_id
       t.references :user, foreign_key: true
       t.timestamps
     end

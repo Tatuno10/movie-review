@@ -6,4 +6,6 @@ class Movie < ApplicationRecord
   has_many :reviews
   has_many :movie_tags
   has_many :tags, through: :movie_tags
+  has_many :movie_casts
+  has_many :cast, through: :movie_casts
 end

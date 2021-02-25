@@ -5,6 +5,7 @@ class CreateReviews < ActiveRecord::Migration[6.0]
       t.text :review, null: false
       t.integer :point
       t.integer :genre
+      t.references :user
       t.references :movie, foreign_key: true
       t.timestamps
     end
