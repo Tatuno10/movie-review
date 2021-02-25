@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_12_024835) do
+ActiveRecord::Schema.define(version: 2021_02_25_132631) do
+
+  create_table "casts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "nameruby", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "movie_casts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "movie_id"
+    t.bigint "cast_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["cast_id"], name: "index_movie_casts_on_cast_id"
+    t.index ["movie_id"], name: "index_movie_casts_on_movie_id"
+  end
 
   create_table "movie_tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "movie_id"
@@ -43,6 +59,8 @@ ActiveRecord::Schema.define(version: 2021_02_12_024835) do
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.text "review", null: false
+    t.integer "point"
+    t.integer "genre"
     t.bigint "movie_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -71,6 +89,8 @@ ActiveRecord::Schema.define(version: 2021_02_12_024835) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "movie_casts", "casts"
+  add_foreign_key "movie_casts", "movies"
   add_foreign_key "movie_tags", "movies"
   add_foreign_key "movie_tags", "tags"
   add_foreign_key "preferences", "users"
