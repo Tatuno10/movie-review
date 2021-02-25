@@ -49,7 +49,8 @@ ActiveRecord::Schema.define(version: 2021_02_25_132631) do
   create_table "preferences", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "category1_id"
     t.integer "category2_id"
-    t.integer "category3_id"
+    t.integer "genre1_id"
+    t.integer "genre2_id"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -61,10 +62,12 @@ ActiveRecord::Schema.define(version: 2021_02_25_132631) do
     t.text "review", null: false
     t.integer "point"
     t.integer "genre"
+    t.bigint "user_id"
     t.bigint "movie_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["movie_id"], name: "index_reviews_on_movie_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
