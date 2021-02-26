@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 2021_02_25_132631) do
     t.string "title", null: false
     t.text "review", null: false
     t.integer "point"
-    t.integer "genre"
+    t.integer "genre_id"
     t.bigint "user_id"
     t.bigint "movie_id"
     t.datetime "created_at", precision: 6, null: false
