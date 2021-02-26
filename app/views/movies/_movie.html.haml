@@ -28,6 +28,7 @@
     = form_with model: [@movie, @review], html: {class: "Review-form__review-form"}, local: true do |f|
       .Input-box
         = f.text_field :title, class: "Input-box__title-form", placeholder: 'title'
+        = f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "選んでください", class:"genre"
         = f.text_area :review , class: "Input-box__text-form", placeholder: "review-text"
         = f.submit 'POST', class: "Input-box__submit-btn"
 

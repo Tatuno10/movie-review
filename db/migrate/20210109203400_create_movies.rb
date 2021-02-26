@@ -5,6 +5,8 @@ class CreateMovies < ActiveRecord::Migration[6.0]
       t.string :titleruby, null: false
       t.string :image
       t.text :synopsis, null: false
+      t.string :copyright
+      t.string :url
       t.timestamps 
     end
   end

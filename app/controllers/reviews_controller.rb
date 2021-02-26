@@ -12,8 +12,8 @@ class ReviewsController < ApplicationController
       redirect_to movie_path(@movie), notice: 'レビューが送信されました'
     else
       @reviews =  @movie.reviews.includes(:movie)
-      flash.now[:alert] = 'メッセージを入力してください。'
-      render :index
+      flash.now[:alert] = @review.errors.full_messages
+      redirect_to movie_path(@movie)
     end
   end
 
@@ -27,7 +27,7 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:title, :review, :genre)
+    params.require(:review).permit(:title, :review, :genre_id)
   end
 
   def set_movie

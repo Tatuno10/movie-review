@@ -42,6 +42,8 @@ ActiveRecord::Schema.define(version: 2021_02_25_132631) do
     t.string "titleruby", null: false
     t.string "image"
     t.text "synopsis", null: false
+    t.string "copyright"
+    t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
