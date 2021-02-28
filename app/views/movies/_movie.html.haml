@@ -10,7 +10,8 @@
         = image_tag @movie.image.url, width: 300, height: 400
       .Movie__detail
         .Movie__synopsis
-          = @movie.synopsis
+          %blockquote.Movie__synopsis
+            = @movie.synopsis
         .Movie__category
           - @movie.tags.each do |tag|
             = tag.name 
@@ -19,17 +20,24 @@
     - @movie.reviews.each do |review|
       .Review-box
         .Review-box__title
-          Title
+          タイトル
           = review.title
+          = review.genre.name
+          = review.point
         .Review-box__text
-          Review
+          レビュー
           = review.review
   .Review-form
     = form_with model: [@movie, @review], html: {class: "Review-form__review-form"}, local: true do |f|
       .Input-box
         = f.text_field :title, class: "Input-box__title-form", placeholder: 'title'
-        = f.text_area :review , class: "Input-box__text-form", placeholder: "review-text"
+        .Input-box__select-field
+          = f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "選んでください", class:"Input-box__genre-form"
+          = f.select :point, {'1': 1, '2': 2,'3': 3,'4': 4,'5': 5,}, {include_blank: "選んでください"}, class: "Input-box__point-form"
+        = f.text_area :review , class: "Input-box__text-form", placeholder: "Input-box__text-form"
         = f.submit 'POST', class: "Input-box__submit-btn"
+  = link_to edit_movie_path(@movie), class: "Movie-registration" do
+    映画編集
 
 
 

@@ -8,7 +8,10 @@
     = f.label :好きなカテゴリー２
     = f.collection_select :category2_id, Tag.all, :id, :name
   .field
-    = f.label :好きなカテゴリー３
-    = f.collection_select :category3_id, Tag.all, :id, :name
+    = f.label :好きなジャンル１
+    = f.collection_select :genre1_id, Genre.all, :id, :name
+  .field
+    = f.label :好きなジャンル2
+    = f.collection_select :genre2_id, Genre.all, :id, :name
   .actions
     = f.submit "Sign up" 

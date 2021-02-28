@@ -13,11 +13,13 @@ before_action :movies, only: [:index, :show]
   end
 
   def edit
-    
+    @movie = Movie.find(params[:id])
   end
 
   def update
-    
+    @movie = Movie.find(params[:id])
+    @movie.update(movie_params)
+    redirect_to root_path, notice: "映画情報を編集しました。"
   end
 
   def show
@@ -36,6 +38,6 @@ before_action :movies, only: [:index, :show]
   end
 
   def movie_params
-    params.require(:movie).permit(:title, :titleruby, :synopsis, :image, tag_ids: [])
+    params.require(:movie).permit(:title, :titleruby, :synopsis, :image, :image_cache, tag_ids: [])
   end
 end

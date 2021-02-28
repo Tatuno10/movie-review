@@ -71,7 +71,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     params.require(:preference).permit(
       :category1_id,
       :category2_id, 
-      :category3_id
+      :genre1_id,
+      :genre2_id
     )
   end
   # If you have extra params to permit, append them to the sanitizer.

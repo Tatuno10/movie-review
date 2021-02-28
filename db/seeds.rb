@@ -40,13 +40,13 @@
 
 
 #  Movie.create(title: "test", titleruby: "てすと", image: File.open("/Users/yamashitatatsuya/downloads/.jpg"), synopsis: "test") 
-Movie.create(id: "1",title: "鬼滅の刃無限列車編", titleruby: "きめつのやいばむげんれっしゃへん", image: File.open("/Users/yamashitatatsuya/downloads/kimetunoyaiba.jpg"), synopsis: "test") 
+Movie.create(id: "1",title: "鬼滅の刃無限列車編", titleruby: "きめつのやいばむげんれっしゃへん", image: File.open("/Users/yamashitatatsuya/downloads/kimetunoyaiba.jpg"), synopsis: "test", copyright: "©吾峠呼世晴／集英社・アニプレックス・ufotable", url: "") 
 Movie.create(id: "2",title: "武器人間", titleruby: "ぶきにんげん", image: File.open("/Users/yamashitatatsuya/downloads/bukininngenn_.jpg"), synopsis: "test") 
-Movie.create(id: "3",title: "容疑者Xの献身", titleruby: "ようぎしゃえっくすのけんしん", image: File.open("/Users/yamashitatatsuya/downloads/yougisya.jpg"), synopsis: "test") 
-Movie.create(id: "4",title: "ゴジラ キングオブモンスターズ", titleruby: "ごじら きんぐおぶもんすたーず", image: File.open("/Users/yamashitatatsuya/downloads/godzilla.jpg"), synopsis: "test") 
-Movie.create(id: "5",title: "MIDNIGHT MEET TRAIN", titleruby: "みっどないとみーととれいん", image: File.open("/Users/yamashitatatsuya/downloads/midnight.jpg"), synopsis: "test") 
-Movie.create(id: "6",title: "ミスト", titleruby: "みすと", image: File.open("/Users/yamashitatatsuya/downloads/mist.jpg"), synopsis: "test") 
-Movie.create(id: "7",title: "タッカーとデイル 史上最悪にツイてないヤツら", titleruby: "たっかーとでいる しじょうさいあくについてないやつら", image: File.open("/Users/yamashitatatsuya/downloads/takka-deiru.jpg"), synopsis: "test") 
-Movie.create(id: "8",title: "アベンジャーズ エンドゲーム", titleruby: "あべんじゃーず えんどげーむ", image: File.open("/Users/yamashitatatsuya/downloads/endgame.jpg"), synopsis: "test") 
+Movie.create(id: "3",title: "容疑者Xの献身", titleruby: "ようぎしゃえっくすのけんしん", image: File.open("/Users/yamashitatatsuya/downloads/yougisya.jpg"), synopsis: "test", copyright: "", url: "") 
+Movie.create(id: "4",title: "ゴジラ キングオブモンスターズ", titleruby: "ごじら きんぐおぶもんすたーず", image: File.open("/Users/yamashitatatsuya/downloads/godzilla.jpg"), synopsis: "test", copyright: "", url: "") 
+Movie.create(id: "5",title: "MIDNIGHT MEET TRAIN", titleruby: "みっどないとみーととれいん", image: File.open("/Users/yamashitatatsuya/downloads/midnight.jpg"), synopsis: "test", copyright: "", url: "") 
+Movie.create(id: "6",title: "ミスト", titleruby: "みすと", image: File.open("/Users/yamashitatatsuya/downloads/mist.jpg"), synopsis: "test", copyright: "", url: "") 
+Movie.create(id: "7",title: "タッカーとデイル 史上最悪にツイてないヤツら", titleruby: "たっかーとでいる しじょうさいあくについてないやつら", image: File.open("/Users/yamashitatatsuya/downloads/takka-deiru.jpg"), synopsis: "test", copyright: "", url: "") 
+Movie.create(id: "8",title: "アベンジャーズ エンドゲーム", titleruby: "あべんじゃーず えんどげーむ", image: File.open("/Users/yamashitatatsuya/downloads/endgame.jpg"), synopsis: "test", copyright: "", url: "") 
 
 
