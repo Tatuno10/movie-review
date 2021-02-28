@@ -21,13 +21,10 @@ class ReviewsController < ApplicationController
     return @reviews
   end
 
-  def new
-    return @review
-  end
 
   private
   def review_params
-    params.require(:review).permit(:title, :review, :genre_id)
+    params.require(:review).permit(:title, :review, :genre_id).merge(user_id: current_user.id)
   end
 
   def set_movie
