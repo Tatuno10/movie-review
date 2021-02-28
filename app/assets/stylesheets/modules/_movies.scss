@@ -103,7 +103,7 @@ a {
 
 .Show-main {
   height: calc(100vh - 90px);
-  width: 70vw;
+  width: 80vw;
   background-color: gray;
   overflow: scroll;
   .Movie{
@@ -164,10 +164,10 @@ a {
       display: flex;
       flex-direction: column;
       &__title-form {
-        width: calc(70vw - 30px);
+        width: calc(80vw - 30px);
       }
       &__text-form {
-        width: calc(70vw - 30px);
+        width: calc(80vw - 30px);
         margin-top: 5px;
       }
       &__submit-btn {

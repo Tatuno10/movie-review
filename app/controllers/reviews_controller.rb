@@ -24,7 +24,7 @@ class ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:title, :review, :genre_id).merge(user_id: current_user.id)
+    params.require(:review).permit(:title, :review, :genre_id, :point).merge(user_id: current_user.id)
   end
 
   def set_movie
