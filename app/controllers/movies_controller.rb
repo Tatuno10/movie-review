@@ -31,7 +31,7 @@ before_action :movies, only: [:index, :show, :search]
 
   def search
     @movies = Movie.search(params[:keyword])
-    @search = @movies.size
+    @search = params[:keyword]
   end
   
 

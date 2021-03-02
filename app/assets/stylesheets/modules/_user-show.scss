@@ -1,0 +1,14 @@
+.user-show {
+  background-color: whitesmoke;
+  width: 80vw;
+  height: 100vh;
+
+  &__top {
+    margin: 30px;
+    text-align: center;
+  }
+  &__title {
+    background-color: gray;
+    height: 30px;
+  }
+}

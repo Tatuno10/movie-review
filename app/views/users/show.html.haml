@@ -2,7 +2,26 @@
   = render "movies/header"
 .wrapper
   = render "movies/side-bar"
-  .user-page 
-    .user-page__title
-      = current_user.name
-      さんのマイページ
+  .user-show
+    .user-show__top
+      .user-show__title
+        = current_user.name
+        さんのマイページ
+    .user-show__main
+      .user-show__genre 
+        = current_user.preference.category1_id
+        = current_user.preference.category1_id
+      .user-show__review
+        - if @reviews = 0
+          まだレビューはありません
+        -else
+          - @reviews.each do |review|
+            .Review-box
+              .Review-box__title
+                タイトル
+                = review.title
+                = review.genre.name
+                = review.point
+              .Review-box__text
+                レビュー
+                = review.review
