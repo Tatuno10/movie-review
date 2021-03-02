@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-before_action :movies, only: [:index, :show]
+before_action :movies, only: [:index, :show, :search]
 
   def index
   end
@@ -24,8 +24,14 @@ before_action :movies, only: [:index, :show]
 
   def show
     @movie = Movie.find(params[:id])
-    @reviews = Review.all
+    @reviews = Review.where(movie_id: @movie.id)
     @review = Review.new
+    @point =  Review.point_average(@reviews)
+  end
+
+  def search
+    @movies = Movie.search(params[:keyword])
+    @search = @movies.size
   end
   
 

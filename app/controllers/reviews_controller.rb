@@ -17,8 +17,12 @@ class ReviewsController < ApplicationController
     end
   end
 
-  def all
+  def where
     return @reviews
+  end
+
+  def point(review)
+    return point_average(review)
   end
 
 

@@ -2,7 +2,9 @@
   = link_to root_path, class: "Header__title" do
     Movie-Review
   .Header__search
-    search-box
+    = form_with(class: "search-box",url: search_movies_path , method: :get, local: true) do |f|
+      = f.text_field :keyword, placeholder: "キーワードから探す", class: "input-box"
+      = f.submit class: "search-btn", id: "search-btn"
   .Header__user-function
     -if user_signed_in? 
       %h2 ログインしています
