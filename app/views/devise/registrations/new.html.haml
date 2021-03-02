@@ -1,24 +1,27 @@
-%h2 Sign up
-
-= form_with model:@user, url: user_registration_path, local: true do |f| 
-
-  .field
-    = f.label :名前
-    = f.text_field :name, autofocus: true, maxlength: "6" 
-
-  
-  .field
-    = f.label :メールアドレス
-    = f.email_field :email, autofocus: true, autocomplete: "email" 
-
-  .field
-    = f.label :パスワード
-    = f.password_field :password, autocomplete: "new-password" 
-
-  .field
-    = f.label :"パスワード(再入力)"
-    = f.password_field :password_confirmation, autocomplete: "new-password" 
-
-  .actions
-    = f.submit "NEXT" 
-= render "devise/shared/links" 
+%body.create-account 
+  %h2 Movie-Review
+  .regist-form
+    = form_with model:@user, url: user_registration_path, local: true do |f| 
+      %h1 アカウントを作成する
+      .form-box
+        .form-box__form-title
+          = f.label :名前, class: "regist-form__name-label"
+        .form-box__input-box
+          = f.text_field :name, autofocus: true, maxlength: "20", class: "regist-form__name-form", placeholder: "6文字以上の名前"
+      .form-box
+        .form-box__form-title
+          = f.label :メールアドレス, class: "regist-form__email-label" 
+        .form-box__input-box
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: "regist-form__mail-form", placeholder: "メールアドレス"
+      .form-box
+        .form-box__form-title
+          = f.label :パスワード, class: "regist-form__password-label"
+        .form-box__input-box
+          = f.password_field :password, autocomplete: "new-password", class: "regist-form__password-form", placeholder: "8文字以上のパスワード"
+      .form-box
+        .form-box__form-title
+          = f.label :"パスワード(再入力)", class: "regist-form__password-label"
+        .form-box__input-box
+          = f.password_field :password_confirmation, autocomplete: "new-password", class: "regist-form__password-form", placeholder: "上と同じパスワード"
+      .regist-form__form-submit
+        = f.submit "次へ", class: "regist-form"

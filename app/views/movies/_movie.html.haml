@@ -10,13 +10,15 @@
         = image_tag @movie.image.url, width: 300, height: 400
       .Movie__detail
         .Movie__synopsis
-          %blockquote.Movie__synopsis
+          %blockquote
             = @movie.synopsis
+        .Movie-review
+          .Movie__point-average
+            = @point
+          .Movie__genre-average
         .Movie__category
           - @movie.tags.each do |tag|
             = tag.name 
-        .Movie__link
-          = @point
   .Review-list
     - @movie.reviews.each do |review|
       .Review-box
