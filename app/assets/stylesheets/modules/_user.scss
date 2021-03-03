@@ -1,6 +1,6 @@
 .create-account {
   text-align: center;
-  padding: 20%;
+  padding: 10% 20% 20% 10%  ;
   background-color: black;
   color: white;
   height: 100vh;
@@ -17,6 +17,9 @@
   }
   &__password-form {
     width: 80%;
+  }
+  &__input-btn {
+    width: 30%;
   }
 }
 .form-box {
