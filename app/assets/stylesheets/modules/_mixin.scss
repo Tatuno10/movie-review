@@ -1,0 +1,7 @@
+@mixin review {
+  border-right: solid 1px cadetblue;
+  padding-right: 10px;
+  span {
+    margin-right: 10px;
+  }
+}

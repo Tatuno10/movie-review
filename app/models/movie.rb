@@ -8,4 +8,20 @@ class Movie < ApplicationRecord
   has_many :tags, through: :movie_tags
   has_many :movie_casts
   has_many :cast, through: :movie_casts
+
+  with_options presence: {message: 'は空で入力しないでください。'} do
+    validates :title
+    validates :titleruby
+    validates :image
+    validates :synopsis
+  end
+
+
+  def self.search(search)
+    if search != ""
+      Movie.where('title LIKE(?)', "%#{search}%")
+    else
+      Movie.all
+    end
+  end
 end

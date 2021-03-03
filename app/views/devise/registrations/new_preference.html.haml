@@ -1,17 +1,26 @@
-%h2住所情報登録
-
-= form_with model:@preference, local: true  do |f| 
-  .field
-    = f.label :好きなカテゴリー１
-    = f.collection_select :category1_id, Tag.all, :id, :name
-  .field
-    = f.label :好きなカテゴリー２
-    = f.collection_select :category2_id, Tag.all, :id, :name
-  .field
-    = f.label :好きなジャンル１
-    = f.collection_select :genre1_id, Genre.all, :id, :name
-  .field
-    = f.label :好きなジャンル2
-    = f.collection_select :genre2_id, Genre.all, :id, :name
-  .actions
-    = f.submit "Sign up" 
+%body.create-account 
+  %h2 Movie-Review
+  .regist-form
+    = form_with model:@preference, local: true  do |f| 
+      .form-box
+        .form-box__form-title
+          = f.label :好きなカテゴリー１
+        .form-box__input-box
+          = f.collection_select :category1_id, Tag.all, :id, :name, include_blank: true
+      .form-box
+        .form-box__form-title
+          = f.label :好きなカテゴリー２
+        .form-box__input-box
+          = f.collection_select :category2_id, Tag.all, :id, :name, include_blank: true
+      .form-box
+        .form-box__form-title
+          = f.label :好きなジャンル１
+        .form-box__input-box
+          = f.collection_select :genre1_id, Genre.all, :id, :name, include_blank: true
+      .form-box
+        .form-box__form-title
+          = f.label :好きなジャンル2
+        .form-box__input-box
+          = f.collection_select :genre2_id, Genre.all, :id, :name, include_blank: true
+      .actions
+        = f.submit "登録する" 

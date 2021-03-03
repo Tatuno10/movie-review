@@ -1,0 +1,36 @@
+.create-account {
+  text-align: center;
+  padding: 10% 20% 20% 10%  ;
+  background-color: black;
+  color: white;
+  height: 100vh;
+}
+.regist-form {
+  h1 {
+
+  }
+  &__name-form {
+    width: 80%;
+  }
+  &__mail-form {
+    width: 80%;
+  }
+  &__password-form {
+    width: 80%;
+  }
+  &__input-btn {
+    width: 30%;
+  }
+}
+.form-box {
+  padding: 10px;
+  width: 100%;
+  display: block;
+  &__form-title {
+    text-align: left;
+    padding-left: 5%;
+  }
+  &__form-input-box {
+    
+  }
+}
