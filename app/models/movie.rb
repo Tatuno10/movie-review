@@ -16,7 +16,6 @@ class Movie < ApplicationRecord
     validates :synopsis
   end
 
-  validates :titleruby, format: { with: /\A[ぁ-ん-]+\z/, message: 'に全角ひらがなを使用してください'}
 
   def self.search(search)
     if search != ""
