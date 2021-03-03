@@ -15,8 +15,8 @@
           %blockquote
             = @movie.synopsis
           .Movie-link
-            - if @movie.url = ""
-              = link_to '映画公式サイト', @movie.url
+            - if @movie.url
+              = link_to '引用元のサイト', @movie.url
             - else
           .Movie-copyright 
             - if @movie.copyright
@@ -53,10 +53,11 @@
             %span
               投稿者
             = review.user.name
-          .Review-box__other 
-            - if review.user_id = current_user.id
-              = link_to "編集", edit_movie_review_path(@movie, review.id)
-              = link_to "削除", movie_review_path(@movie, review.id), method: :delete
+          .Review-box__other
+            - if user_signed_in?
+              - if review.user.id == current_user.id || current_user.admin?
+                = link_to "編集", edit_movie_review_path(@movie, review.id)
+                = link_to "削除", movie_review_path(@movie, review.id), method: :delete
         .Review-box__text
           %span
             レビュー
@@ -70,17 +71,17 @@
         = form_with model: [@movie, @review], html: {class: "Review-form__review-form"},id: "new-review", local: true do |f|
           .review-box
             .review-box__title-field
-              レビュータイトル
-              = f.text_field :title, class: "review-box__title-form", placeholder: 'title'
+              タイトル
+              = f.text_field :title , placeholder: "レビューのタイトル", class: "review-box__title-form"
               .review-box__select-field
                 映画の感想
                 = f.collection_select :genre_id, Genre.all, :id, :name, include_blank: "必須", class:"review-box__genre-form"
                 映画の点数(1 ~ 5点)
                 = f.select :point, {'5 最高': 5,'4': 4,'3': 3,'2': 2,'1 最低': 1}, {include_blank: "必須"}, class: "review-box__point-form"
             .review-box__text-field
-              = f.text_area :review , class: "review-box__text-form", placeholder: "review-box__text-form"
+              = f.text_area :review , placeholder: "レビューの内容", class: "review-box__text-form"
             .review-box__submit-btn
-            = f.submit 'POST', class: "review-box__submit-btn"
+            = f.submit '投稿', class: "review-box__submit-btn"
     - else
       レビューを投稿するにはログインしてください
   - if user_signed_in? 

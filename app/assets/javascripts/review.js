@@ -1,20 +1,38 @@
 $(function(){
+
   function buildHTML(review){
     let html = `<div class = "Review-box">
-                  <div class = "Review-box__title">
-                    ${review.title}
-                    ${review.genre_name}
-                    ${review.point}
+                  <div class = "Review-box__top">
+                    <div class = "Review-box__title">
+                      <span>タイトル</span>
+                      ${review.title}
+                    </div>
+                    <div class = "Review-box__genre">
+                    <span>感想の種類</span>
+                      ${review.genre_name}
+                    </div>
+                    <div class = "Review-box__point">
+                      <span>評価</span>
+                      ${review.point}
+                    </div>
+                    <div class = "Review-box__point">
+                      <span>投稿者</span>
+                      ${review.user_name}
+                    </div>
+                    <div class = "Review-box__other ">
+                      
+                    </div>
                   </div>
                   <div class = "Review-box__text">
-                    ${review.text}
+                    <span>レビュー</span>
+                    ${review.review}
                   </div>
                 </div>`
+    return html;
   }
-  $('#new_review').on('submit', function(e){
+  $('#new-review').on('submit', function(e){
     e.preventDefault();
     let formData = new FormData(this);
-    console.log(formData)
     let url = $(this).attr('action')
     $.ajax({
       url: url,
@@ -27,12 +45,10 @@ $(function(){
     .done(function(data){
       let html = buildHTML(data);
       $('.Review-list').append(html);
-      $('.Input-box__title-form').val('');
-      $('.Input-box__text-form').val('');
-      $('.Input-box__submit-btn').prop('disabled', false);
+      $('#new-review').hide();
     })
     .fail(function(){
-      alert('error');
-    })
+      alert('erorr');
+    });
   })
 })

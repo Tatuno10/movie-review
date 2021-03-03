@@ -10,15 +10,15 @@
     .user-show__main
       .user-show__genre 
         .user-show__genre1
-          - if current_user.preference.category1_id = nil
+          - if current_user.preference.category1_id 
             好きなジャンル１
-            = current_user.preference.category1_id
+            スリラー
           - else
             = link_to "好きなジャンルを追加", "#"
         .user-show__genre2
-          - if current_user.preference.category2_id = nil
+          - if current_user.preference.category2_id 
             好きなジャンル２
-            = current_user.preference.category2_id
+            コメディ
           - else
             = link_to "好きなジャンルを追加", "#"
       .user-show__review-list
