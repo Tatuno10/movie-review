@@ -6,9 +6,13 @@
       = f.text_field :keyword, placeholder: "キーワードから探す", class: "input-box"
       = f.submit "検索", class: "search-btn", id: "search-btn"
   .Header__user-function
-    -if user_signed_in? 
-      = link_to "log_out", destroy_user_session_path, method: :delete
-      = link_to "my_page", user_path(current_user.id), method: :get
+    -if user_signed_in?
+      .log_out
+        = link_to "log_out", destroy_user_session_path, method: :delete
+      .my_page
+        = link_to "my_page", user_path(current_user.id), method: :get
     -else 
-      = link_to "create_acount", new_user_registration_path
-      = link_to "log_in", new_user_session_path
+      .create_acount
+        = link_to "create_acount", new_user_registration_path
+      .log_in
+        = link_to "log_in", new_user_session_path

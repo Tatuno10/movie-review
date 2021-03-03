@@ -9,19 +9,48 @@
         さんのマイページ
     .user-show__main
       .user-show__genre 
-        = current_user.preference.category1_id
-        = current_user.preference.category1_id
-      .user-show__review
-        - if @reviews = 0
-          まだレビューはありません
-        -else
-          - @reviews.each do |review|
-            .Review-box
+        .user-show__genre1
+          - if current_user.preference.category1_id = nil
+            好きなジャンル１
+            = current_user.preference.category1_id
+          - else
+            = link_to "好きなジャンルを追加", "#"
+        .user-show__genre2
+          - if current_user.preference.category2_id = nil
+            好きなジャンル２
+            = current_user.preference.category2_id
+          - else
+            = link_to "好きなジャンルを追加", "#"
+      .user-show__review-list
+        レビュー 一覧
+        - @reviews.each do |review|
+          .Review-box
+            .Review-box__top
               .Review-box__title
-                タイトル
+                %span
+                  映画のタイトル
+                = review.movie.title
+              .Review-box__title
+                %span
+                  タイトル
                 = review.title
+              .Review-box__genre
+                %span
+                  感想の種類
                 = review.genre.name
+              .Review-box__point
+                %span
+                  評価
                 = review.point
-              .Review-box__text
+              .Review-box__point
+                %span
+                  投稿者
+                = review.user.name
+              .Review-box__other 
+                - if review.user_id = current_user.id
+                  = link_to "編集", edit_movie_review_path(review.movie_id, review.id)
+                  = link_to "削除", movie_review_path(review.movie_id, review.id), method: :delete
+            .Review-box__text
+              %span
                 レビュー
-                = review.review
+              = review.review

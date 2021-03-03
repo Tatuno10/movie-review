@@ -5,6 +5,8 @@
         = f.text_field :titleruby, class: 'New-movie__titleruby-form', placeholder: 'ルビをひらがなで入力してください'
         = f.text_area :synopsis, class: 'New-movie__synopsis-form', placeholder: '映画の詳細を入力してください'
         = image_tag @movie.image.url, alt: "preview"
+        = f.text_field :copuright, placeholder: "映画の著作権者を記入してください"
+        = f.text_field :url, placeholder: "公式サイトへのリンクを記入してください"
         = f.file_field :image, class: 'New-movie__image-form'
         = f.hidden_field :image_cache
         = f.collection_check_boxes :tag_ids, Tag.all, :id, :name
