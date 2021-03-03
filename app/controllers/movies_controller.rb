@@ -44,6 +44,6 @@ before_action :movies, only: [:index, :show, :search]
   end
 
   def movie_params
-    params.require(:movie).permit(:title, :titleruby, :synopsis, :image, :image_cache, tag_ids: [])
+    params.require(:movie).permit(:title, :titleruby, :synopsis, :copyright, :url, :image, :image_cache, tag_ids: [])
   end
 end

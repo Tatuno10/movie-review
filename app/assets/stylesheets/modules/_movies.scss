@@ -110,6 +110,7 @@ a {
   width: 80vw;
   background-color: gray;
   overflow: scroll;
+  display: block;
   .Movie{
     background-color: brown;
     margin: 10px;
@@ -128,10 +129,13 @@ a {
     &__details {
       display: flex;
       width: 100%;
+      height: 400px;
     }
     &__detail {
       width: 100%;
       height: 100%;
+      overflow: scroll;
+
     }
     &__synopsis {
       background-color: white;
@@ -141,47 +145,52 @@ a {
     &__category {
       background-color: white;
       height: 10%;
+      overflow: scroll;
     }
     &-review {
       display: flex;
       height: 10%;
+      overflow: scroll;
     }
   }
   .Review-list{
     background-color: cadetblue;
-    margin: 10px;
+    margin: 20px 10px;
     padding: 5px;
-    .Review-box {
-      background-color: white;
-      border: solid 1px black;
-      margin-bottom: 5px;
-      &__title{
-        border: 1px, cadetblue, solid;
-      }
-      &__text{
-
-      }
-    }
   }
-  .Review-form {
-    height: 120px;
-    margin: 10px;
-    padding: 5px;
-    background-color: chocolate;
-    .Input-box {
+}
+.Review-form {
+  margin: 10px;
+  padding: 5px;
+  background-color: chocolate;
+  .review-box {
+    display: flex;
+    flex-direction: column;
+    &__title-field {
       display: flex;
-      flex-direction: column;
-      &__title-form {
-        width: calc(80vw - 30px);
-      }
-      &__text-form {
-        width: calc(80vw - 30px);
-        margin-top: 5px;
-      }
-      &__submit-btn {
-        background-color: white;
-        width: 50px;
-      }
+      width: 100%;
+    }
+    &__title-form {
+      width: 40%;
+    }
+    &__select-field{
+      display: flex;
+      width: 60%;
+    }
+    &_genre-form {
+      width: 30%;
+    }
+    &__point-form {
+      width: 30%;
+    }
+    &__text-form {
+      width: calc(80vw - 30px);
+      height: 100px;
+      margin-top: 5px;
+    }
+    &__submit-btn {
+      background-color: white;
+      width: 50px;
     }
   }
 }
@@ -194,5 +203,35 @@ a {
       text-align: center;
       color: black;
     }
-
+}
+.Review-box {
+  background-color: white;
+  border: solid 1px white;
+  margin-bottom: 5px;
+  span::after {
+    content: "\A" ;
+    white-space: pre ;
+    
+  }
+  &__top{
+    display: flex;
+    justify-content: start;
+    border-bottom: solid 1px cadetblue;
+  }
+  &__title {
+    border-right: solid 1px cadetblue;
+    padding-right: 10px;
+    span {
+      margin-right: 10px;
+    }
+  }
+  &__genre {
+    @include review
+  }
+  &__point {
+    @include review
+  }
+  &__text{
+    word-wrap: break-word;
+  }
 }
