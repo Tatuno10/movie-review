@@ -211,7 +211,7 @@ ja:
     address: 番地
     address_detail: 建物名
     phone_number: 電話番号
-    name: 商品名
+    name: 名前
     price: 販売価格
     explanation: 商品の説明
     category: カテゴリー

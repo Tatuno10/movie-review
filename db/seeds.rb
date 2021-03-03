@@ -40,7 +40,7 @@
 
 
 #  Movie.create(title: "test", titleruby: "てすと", image: File.open("/Users/yamashitatatsuya/downloads/.jpg"), synopsis: "test") 
-Movie.create(id: "1",title: "鬼滅の刃無限列車編", titleruby: "きめつのやいばむげんれっしゃへん", image: File.open("/Users/yamashitatatsuya/downloads/kimetunoyaiba.jpg"), synopsis: "test", copyright: "©吾峠呼世晴／集英社・アニプレックス・ufotable", url: "") 
+Movie.create(id: "1",title: "鬼滅の刃無限列車編", titleruby: "きめつのやいばむげんれっしゃへん", image: File.open("/Users/yamashitatatsuya/downloads/kimetunoyaiba.jpg"), synopsis: "蝶屋敷での修行を終えた炭治郎たちは、次なる任務の地、無限列車に到着する。そこでは短期間のうちに四十人以上の人が行方不明になっているという。炭治郎たちは鬼殺隊の炎柱「煉獄杏寿郎」と合流し無限列車の中で鬼と立ち向かうのだった。", copyright: "©吾峠呼世晴／集英社・アニプレックス・ufotable", url: "https://kimetsu.com/anime/") 
 Movie.create(id: "2",title: "武器人間", titleruby: "ぶきにんげん", image: File.open("/Users/yamashitatatsuya/downloads/bukininngenn_.jpg"), synopsis: "test") 
 Movie.create(id: "3",title: "容疑者Xの献身", titleruby: "ようぎしゃえっくすのけんしん", image: File.open("/Users/yamashitatatsuya/downloads/yougisya.jpg"), synopsis: "test", copyright: "", url: "") 
 Movie.create(id: "4",title: "ゴジラ キングオブモンスターズ", titleruby: "ごじら きんぐおぶもんすたーず", image: File.open("/Users/yamashitatatsuya/downloads/godzilla.jpg"), synopsis: "test", copyright: "", url: "") 

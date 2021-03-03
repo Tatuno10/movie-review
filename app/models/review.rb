@@ -4,6 +4,13 @@ class Review < ApplicationRecord
   belongs_to :movie
   belongs_to :user
 
+  with_options presence: {message: 'は空で入力しないでください。'} do
+    validates :title
+    validates :review
+    validates :point
+    validates :genre_id
+  end
+
   def self.point_average(review)
     sum_num = 0
     review.each do |review|
