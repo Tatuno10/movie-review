@@ -1,6 +1,6 @@
 .New-movie
     %h3 "投稿する"
-    = form_with model: [@movie], html: {class: "New-movie__form"}, local: true do |f|
+    = form_with model: [:admin, @movie], html: {class: "New-movie__form"}, local: true do |f|
         = f.text_field :title, class: 'New-movie__title-form', placeholder: '映画のタイトルを入力してください'
         = f.text_field :titleruby, class: 'New-movie__titleruby-form', placeholder: 'ルビをひらがなで入力してください'
         = f.text_area :synopsis, class: 'New-movie__synopsis-form', placeholder: '映画の詳細を入力してください'
