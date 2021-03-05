@@ -1,6 +1,8 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_movie
   before_action :movies, only: [:edit, :update]
+  before_action :check_user, only: [:edit, :update, :destroy]
 
   def index
     @review = Review.new
@@ -22,7 +24,6 @@ class ReviewsController < ApplicationController
   end
 
   def edit
-    @review = Review.find(params[:id])
   end
 
   def update
@@ -35,13 +36,8 @@ class ReviewsController < ApplicationController
   end
 
   def destroy
-    @review = Review.find(params[:id])
-    if current_user.id == @review.user_id
-      @review.destroy
-      redirect_to movie_path(@movie), notice: "レビューを削除しました。"
-    else
-      redirect_to movie_path(@movie), notice: "レビューの投稿者ではありません。"
-    end
+    @review.destroy
+    redirect_to movie_path(@movie), notice: "レビューを削除しました。"
   end
 
   def where
@@ -67,9 +63,17 @@ class ReviewsController < ApplicationController
   end
 
   def movies
+    @q = Movie.ransack
     @tag = Tag.all
     @movies = Movie.all
     @moviesup = Movie.order("id DESC")
+  end
+
+  def check_user
+    @review = Review.find(params[:id])
+    unless @review.user.id == current_user.id || current_user.admin?
+      redirect_to movie_path(@movie), notice: "レビューの投稿者ではありません。"
+    end
   end
 
 end
