@@ -19,18 +19,18 @@
       -if tag.root? 
         %details.tag-list__root-tag
           %summary.tag-list__tag
-            = link_to ({ contoroller: "movies", action: "search", q:{tags_name_cont: tag.name}}) do
+            = link_to ({ controller: "movies", action: "search", q:{tags_name_cont: tag.name}}) do
               = tag.name 
           - if tag.children?
             - tag.children.each do |tag|
               .tag-list__child-tag
-                = link_to ({ contoroller: "movies", action: "search", q:{tags_name_cont: tag.name}}) do
+                = link_to ({ controller: "movies", action: "search", q:{tags_name_cont: tag.name}}) do
                   %span
                   = tag.name
                 -if tag.children?
                   -tag.children.each do |tag|
                     .tag-list__garndchild-tag
-                      = link_to ({ contoroller: "movies", action: "search", q:{tags_name_cont: tag.name}}) do
+                      = link_to ({ controller: "movies", action: "search", q:{tags_name_cont: tag.name}}) do
                         = tag.name
   - if user_signed_in?
     - if current_user.admin?
