@@ -1,19 +1,19 @@
 .Side-bar
-  .Movie-ranking
+  .movie-ranking
     人気ランキング
-    .Movie-ranking__list
+    .movie-ranking__list
       - @movies.first(5).each do |movie|
-        .Movie-ranking-list
-          = link_to movie_path(movie.id), method: :get, class: "Movie-ranking-list__title" do
+        .movie-ranking-list
+          = link_to movie_path(movie.id), method: :get, class: "movie-ranking-list__title" do
             = movie.title
-  .New-movie
+  .new-movie
     新着映画
-    .New-movie-list
+    .new-movie-list
       - @moviesup.first(5).each do |movie|
-        .Movie-ranking-list
-          = link_to movie_path(movie.id), method: :get, class: "New-movie-list__title" do
+        .movie-ranking-list
+          = link_to movie_path(movie.id), method: :get, class: "new-movie-list__title" do
             = movie.title
-  .Tag-list
+  .tag-list
     タグリスト
     - @tag.each do |tag|
       -if tag.root? 
