@@ -17,26 +17,25 @@
     タグリスト
     - @tag.each do |tag|
       -if tag.root? 
-        .Tag-list__tag
-          = link_to "#" do
-            = tag.name 
         %details.tag-list__root-tag
           %summary.tag-list__tag
+            = link_to ({ contoroller: "movies", action: "search", q:{tags_name_cont: tag.name}}) do
+              = tag.name 
           - if tag.children?
             - tag.children.each do |tag|
-              .Tag-list__child-tag
-                = link_to "#"do
+              .tag-list__child-tag
+                = link_to ({ contoroller: "movies", action: "search", q:{tags_name_cont: tag.name}}) do
                   %span
                   = tag.name
                 -if tag.children?
                   -tag.children.each do |tag|
-                    .Tag-list__garndchild-tag
-                      = link_to "#" do
+                    .tag-list__garndchild-tag
+                      = link_to ({ contoroller: "movies", action: "search", q:{tags_name_cont: tag.name}}) do
                         = tag.name
   - if user_signed_in?
     - if current_user.admin?
       .admin
-        = link_to new_movie_path, class: "Movie-registration" do
+        = link_to new_movie_path, class: "movie-registration" do
           映画登録
-        = link_to new_tag_path, class: "Movie-registration" do
+        = link_to new_tag_path, class: "movie-registration" do
           タグ登録
