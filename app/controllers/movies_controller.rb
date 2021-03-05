@@ -4,24 +4,6 @@ before_action :movies, only: [:index, :show, :search]
   def index
   end
 
-  def new
-    @movie = Movie.new
-  end
-
-  def create
-    Movie.create(movie_params)
-  end
-
-  def edit
-    @movie = Movie.find(params[:id])
-  end
-
-  def update
-    @movie = Movie.find(params[:id])
-    @movie.update(movie_params)
-    redirect_to root_path, notice: "映画情報を編集しました。"
-  end
-
   def show
     @movie = Movie.find(params[:id])
     @reviews = Review.where(movie_id: @movie.id)

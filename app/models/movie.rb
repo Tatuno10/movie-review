@@ -4,9 +4,9 @@ class Movie < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   has_many :reviews
-  has_many :movie_tags
+  has_many :movie_tags, dependent: :destroy
   has_many :tags, through: :movie_tags
-  has_many :movie_casts
+  has_many :movie_casts, dependent: :destroy
   has_many :cast, through: :movie_casts
 
   with_options presence: {message: 'は空で入力しないでください。'} do
