@@ -11,6 +11,8 @@ class Review < ApplicationRecord
     validates :genre_id
   end
 
+  validates :point, format: {with: /\A[^1-5]\z/, message: 'に数字１〜５を使用してください'}
+
   def self.point_average(review)
     sum_num = 0
     review.each do |review|

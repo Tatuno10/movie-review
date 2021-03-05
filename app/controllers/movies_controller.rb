@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
 before_action :movies, only: [:index, :show, :search]
+before_action :set_movie, only: :show
 
   def index
   end
@@ -27,11 +28,15 @@ before_action :movies, only: [:index, :show, :search]
     @moviesup = Movie.order("id DESC")
   end
 
-  def movie_params
-    params.require(:movie).permit(:title, :titleruby, :synopsis, :copyright, :url, :image, :image_cache, tag_ids: [])
-  end
-
   def search_params
     params.require(:q).permit!
+  end
+
+  def set_movie
+    begin 
+      @movie = Movie.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      redirect_to root_path,notice: "ご指定の映画が見つかりません。"  
+    end
   end
 end
