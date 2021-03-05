@@ -20,6 +20,8 @@
         .Tag-list__tag
           = link_to "#" do
             = tag.name 
+        %details.tag-list__root-tag
+          %summary.tag-list__tag
           - if tag.children?
             - tag.children.each do |tag|
               .Tag-list__child-tag
