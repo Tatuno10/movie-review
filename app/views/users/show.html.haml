@@ -1,7 +1,7 @@
 .header
   = render "movies/header"
 .wrapper
-  .side-bar
+  = render "side-bar" 
   .user-show
     .user-show__top
       .user-show__title
@@ -21,36 +21,39 @@
             コメディ
           - else
             = link_to "好きなジャンルを追加", "#"
-      .user-show__review-list
-        レビュー 一覧
-        - @reviews.each do |review|
-          .Review-box
-            .Review-box__top
-              .Review-box__title
+      .user-show__recently-review
+        最近のレビュー 
+        - @reviews.first(3).each do |review|
+          .review-box
+            .review-box__top
+              .review-box__title
                 %span
                   映画のタイトル
                 = review.movie.title
-              .Review-box__title
+              .review-box__title
                 %span
                   タイトル
                 = review.title
-              .Review-box__genre
+              .review-box__genre
                 %span
                   感想の種類
                 = review.genre.name
-              .Review-box__point
+              .review-box__point
                 %span
                   評価
                 = review.point
-              .Review-box__point
+              .review-box__point
                 %span
                   投稿者
                 = review.user.name
-              .Review-box__other 
+              .review-box__other 
                 - if review.user_id = current_user.id
                   = link_to "編集", edit_movie_review_path(review.movie_id, review.id)
                   = link_to "削除", movie_review_path(review.movie_id, review.id), method: :delete
-            .Review-box__text
+            .review-box__text
               %span
                 レビュー
               = review.review
+        = link_to "#" do
+          詳しく見る
+      .user-show__recently-movie
