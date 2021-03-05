@@ -10,7 +10,7 @@ a {
   display: flex;
 }
 
-.Header {
+.header {
   display: flex;
   height: 90px;
   width: 100vw;
@@ -36,22 +36,22 @@ a {
   }
 }
 
-.Side-bar {
+.side-bar {
   height: calc(100vh - 90px);
   width: 20vw;
   background-color: lightgrey;
   overflow: scroll;
-  .Movie-ranking{
+  .movie-ranking{
     margin: 10px;
     color: red;
     background-color: coral;
   }
-  .New-movie {
+  .new-movie {
     margin: 10px;
     color: yellow;
     background-color: darkkhaki;
   }
-  .Tag-list {
+  .tag-list {
     margin: 10px;
     color: blue;
     background-color: deepskyblue;
@@ -62,18 +62,18 @@ a {
       color: black;
     }
   }
-  .Movie-registration {
+  .movie-registration {
     margin: 10px;
     color: black;
     background-color: white;
   }
 }
 
-.Main {
+.main {
   width: 80vw;
   height: calc(100vh - 90px);
   overflow: scroll;
-  .Movie-choice{
+  .movie-choice{
     background-color: gray;
     height: 320px;
     &__list {
@@ -83,7 +83,7 @@ a {
       justify-content: space-between;
     }
   }
-  .New-movie {
+  .new-movie {
     height: 320px;
     background-color: white;
     &__list {
@@ -93,7 +93,7 @@ a {
       justify-content: space-between;
     }
   }
-  .Movie-list {
+  .movie-list {
     height: 320px;
     background-color: gray;
     &__list {
@@ -105,13 +105,13 @@ a {
   }
 }
 
-.Show-main {
+.show-main {
   height: calc(100vh - 90px);
   width: 80vw;
   background-color: gray;
   overflow: scroll;
   display: block;
-  .Movie{
+  .movie{
     background-color: brown;
     margin: 10px;
     height: 440px;
@@ -153,13 +153,13 @@ a {
       overflow: scroll;
     }
   }
-  .Review-list{
+  .review-list{
     background-color: cadetblue;
     margin: 20px 10px;
     padding: 5px;
   }
 }
-.Review-form {
+.review-form {
   margin: 10px;
   padding: 5px;
   background-color: chocolate;
@@ -194,9 +194,12 @@ a {
     }
   }
 }
-.Movie-box {
+.movie-box {
   width: 200px;
-  padding: 20px 20px;
+  padding: 5px;
+  border: solid 1px ;
+  margin: 5px;
+  background-color: silver;
     &__title {
       height: 40px;
       overflow: hidden;
@@ -204,7 +207,7 @@ a {
       color: black;
     }
 }
-.Review-box {
+.review-box {
   background-color: white;
   border: solid 1px white;
   margin-bottom: 5px;

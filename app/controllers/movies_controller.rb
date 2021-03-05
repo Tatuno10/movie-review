@@ -30,14 +30,16 @@ before_action :movies, only: [:index, :show, :search]
   end
 
   def search
-    @movies = Movie.search(params[:keyword])
-    @search = params[:keyword]
+    @q = Movie.ransack(search_params)
+    @searchs = @q.result(distinct: true)
+    @search = params[:q]
   end
   
 
   private
 
   def movies
+    @q = Movie.ransack
     @tag = Tag.all
     @movies = Movie.all
     @moviesup = Movie.order("id DESC")
@@ -45,5 +47,9 @@ before_action :movies, only: [:index, :show, :search]
 
   def movie_params
     params.require(:movie).permit(:title, :titleruby, :synopsis, :copyright, :url, :image, :image_cache, tag_ids: [])
+  end
+
+  def search_params
+    params.require(:q).permit!
   end
 end

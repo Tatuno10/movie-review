@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   end
   private
   def movies
+    @q = Movie.ransack
     @tag = Tag.all
     @movies = Movie.all
     @moviesup = Movie.order("id DESC")

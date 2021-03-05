@@ -1,40 +1,41 @@
-.Side-bar
-  .Movie-ranking
+.side-bar
+  .movie-ranking
     人気ランキング
-    .Movie-ranking__list
+    .movie-ranking__list
       - @movies.first(5).each do |movie|
-        .Movie-ranking-list
-          = link_to movie_path(movie.id), method: :get, class: "Movie-ranking-list__title" do
+        .movie-ranking-list
+          = link_to movie_path(movie.id), method: :get, class: "movie-ranking-list__title" do
             = movie.title
-  .New-movie
+  .new-movie
     新着映画
-    .New-movie-list
+    .new-movie-list
       - @moviesup.first(5).each do |movie|
-        .Movie-ranking-list
-          = link_to movie_path(movie.id), method: :get, class: "New-movie-list__title" do
+        .movie-ranking-list
+          = link_to movie_path(movie.id), method: :get, class: "new-movie-list__title" do
             = movie.title
-  .Tag-list
+  .tag-list
     タグリスト
     - @tag.each do |tag|
       -if tag.root? 
-        .Tag-list__tag
-          = link_to "#" do
-            = tag.name 
+        %details.tag-list__root-tag
+          %summary.tag-list__tag
+            = link_to ({ contoroller: "movies", action: "search", q:{tags_name_cont: tag.name}}) do
+              = tag.name 
           - if tag.children?
             - tag.children.each do |tag|
-              .Tag-list__child-tag
-                = link_to "#"do
+              .tag-list__child-tag
+                = link_to ({ contoroller: "movies", action: "search", q:{tags_name_cont: tag.name}}) do
                   %span
                   = tag.name
                 -if tag.children?
                   -tag.children.each do |tag|
-                    .Tag-list__garndchild-tag
-                      = link_to "#" do
+                    .tag-list__garndchild-tag
+                      = link_to ({ contoroller: "movies", action: "search", q:{tags_name_cont: tag.name}}) do
                         = tag.name
   - if user_signed_in?
     - if current_user.admin?
       .admin
-        = link_to new_movie_path, class: "Movie-registration" do
+        = link_to new_movie_path, class: "movie-registration" do
           映画登録
-        = link_to new_tag_path, class: "Movie-registration" do
+        = link_to new_tag_path, class: "movie-registration" do
           タグ登録
