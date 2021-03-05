@@ -5,13 +5,15 @@
   .search
     .search-result
       検索対象
-      = @search
-      = @movies.length 
+      = @search.values
+      = @searchs.length 
       件の検索結果
+    .search-sort 
+      = sort_link(@q, :title, "Title")
     .search-list
-      - @movies.each do |movie|
+      - @searchs.each do |movie|
         .Movie-box
-          = link_to movie_path(movie.id),method: :get, class: "Movie-box__title" do
+          = link_to movie_path(movie.id),method: :get, class: "movie-box__title" do
             .Movie-box__title
               = movie.title
             .Movie-box__photo
