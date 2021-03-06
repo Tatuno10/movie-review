@@ -1,7 +1,7 @@
 .side-bar
   .side-bar__list
     .side-bar__list-name
-      = link_to user_path(current_user.id) do
+      = link_to user_path(@user.id) do
         マイページ
     .side-bar__list-name
       = link_to "#" do
@@ -16,14 +16,11 @@
       = link_to "#" do
         お気に入り一覧
     .side-bar__list-name
-      = link_to "#" do
+      = link_to edit_user_registration_path(@user.id) do
         ユーザ情報変更
     .side-bar__list-name
-      = link_to "#" do
-        好きなジャンル変更
-    .side-bar__list-name
-      = link_to "#" do
-        好きなカテゴリー変更
+      = link_to edit_user_path(@user.id) do
+        好きなジャンル、カテゴリー変更
     .side-bar__list-name
       = link_to "#" do
         プロフィール編集

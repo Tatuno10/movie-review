@@ -5,18 +5,18 @@
   .user-show
     .user-show__top
       .user-show__title
-        = current_user.name
+        = @user.name
         さんのマイページ
     .user-show__main
       .user-show__genre 
         .user-show__genre1
-          - if current_user.preference.category1_id 
+          - if @user.preference.category1_id 
             好きなジャンル１
             スリラー
           - else
             = link_to "好きなジャンルを追加", "#"
         .user-show__genre2
-          - if current_user.preference.category2_id 
+          - if @user.preference.category2_id 
             好きなジャンル２
             コメディ
           - else
@@ -47,7 +47,7 @@
                   投稿者
                 = review.user.name
               .review-box__other 
-                - if review.user_id = current_user.id
+                - if review.user_id = @user.id
                   = link_to "編集", edit_movie_review_path(review.movie_id, review.id)
                   = link_to "削除", movie_review_path(review.movie_id, review.id), method: :delete
             .review-box__text
