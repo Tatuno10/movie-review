@@ -7,11 +7,12 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @preference = Preference.find(params[:id])
+    @preference = Preference.find_by(user_id: @user.id )
   end
 
   def update
-    if @user.preference.update(preference_params)
+    @preference = Preference.find_by(user_id: @user.id )
+    if @preference.update(preference_params)
       redirect_to user_path(current_user.id), notice: "ジャンル、カテゴリーを編集しました"
     else
       flash.now[:alert] = @preference.errors.full_messages
@@ -29,7 +30,7 @@ class UsersController < ApplicationController
   end
 
   def preference_params
-    params.permit(
+    params.require(:preference).permit(
       :category1_id,
       :category2_id, 
       :genre1_id,

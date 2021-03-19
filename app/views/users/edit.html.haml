@@ -3,7 +3,7 @@
 .wrapper
   = render "side-bar" 
   .regist-form
-    = form_with model: @preference, url: {controller: 'users', action: 'update' } local: true  do |f| 
+    = form_with model: @preference, url: {controller: 'users', action: 'update' }, local: true  do |f| 
       .form-box
         .form-box__form-title
           = f.label :好きなカテゴリー１
