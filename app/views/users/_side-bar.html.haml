@@ -22,6 +22,9 @@
       = link_to edit_user_path(@user.id) do
         好きなジャンル、カテゴリー変更
     .side-bar__list-name
+      = link_to profile_user_path(@user.id) do
+        プロフィール画面
+    .side-bar__list-name
       = link_to profile_edit_user_path(@user.id) do
         プロフィール編集
     .side-bar__list-name
