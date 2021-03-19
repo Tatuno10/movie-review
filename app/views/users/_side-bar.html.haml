@@ -7,13 +7,13 @@
       = link_to "#" do
         お知らせ
     .side-bar__list-name
-      = link_to "#" do
+      = link_to movie_all_user_path(@user.id) do
         評価した映画一覧
     .side-bar__list-name
-      = link_to "#" do
+      = link_to review_all_user_path(@user.id) do
         レビュー 一覧
     .side-bar__list-name
-      = link_to "#" do
+      = link_to favorite_user_path(@user.id) do
         お気に入り一覧
     .side-bar__list-name
       = link_to edit_user_registration_path(@user.id) do
@@ -22,7 +22,7 @@
       = link_to edit_user_path(@user.id) do
         好きなジャンル、カテゴリー変更
     .side-bar__list-name
-      = link_to "#" do
+      = link_to profile_edit_user_path(@user.id) do
         プロフィール編集
     .side-bar__list-name
       = link_to "#" do
