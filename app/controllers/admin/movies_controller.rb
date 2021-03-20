@@ -6,7 +6,7 @@ class Admin::MoviesController < ApplicationController
   end
 
   def create
-    @movie = movie.new(movie_params)
+    @movie = Movie.new(movie_params)
     if  @movie.save
       redirect_to root_path, notice: "映画情報を作成しました。"
     else
