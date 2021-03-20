@@ -49,8 +49,8 @@ ActiveRecord::Schema.define(version: 2021_03_19_054908) do
   end
 
   create_table "preferences", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "category1_id"
-    t.integer "category2_id"
+    t.integer "tag1_id"
+    t.integer "tag2_id"
     t.integer "genre1_id"
     t.integer "genre2_id"
     t.bigint "user_id"
