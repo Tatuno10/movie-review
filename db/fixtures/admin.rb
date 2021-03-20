@@ -1,2 +1,2 @@
 User.create(id: "1", name: "管理者", email: "admin@admin.jp", password: "saki8130",password_confirmation: "saki8130", admin: true)
-Preference.create(id: "1", tag1_id: "", tag2_id: "", genre1_id: "", genre2_id: "", user_id: "1")
+Preference.create(id: "1", tag1_id: "1", tag2_id: "2", genre1_id: "1", genre2_id: "2", user_id: "1")
