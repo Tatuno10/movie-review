@@ -12,7 +12,6 @@ class Movie < ApplicationRecord
   with_options presence: {message: 'は空で入力しないでください。'} do
     validates :title
     validates :titleruby
-    validates :image
     validates :synopsis
   end
 
