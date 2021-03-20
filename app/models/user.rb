@@ -6,5 +6,6 @@ class User < ApplicationRecord
         
   validates :name ,presence: true, uniqueness: true
   has_one :preference
+  has_one :profile
   has_many :reviews
 end
