@@ -69,8 +69,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
   
   def preference_params
     params.require(:preference).permit(
-      :category1_id,
-      :category2_id, 
+      :tag1_id,
+      :tag2_id, 
       :genre1_id,
       :genre2_id
     )

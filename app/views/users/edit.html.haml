@@ -8,12 +8,12 @@
         .form-box__form-title
           = f.label :好きなカテゴリー１
         .form-box__input-box
-          = f.collection_select :category1_id, Tag.all, :id, :name, include_blank: true
+          = f.collection_select :tag1_id, Tag.all, :id, :name, include_blank: true
       .form-box
         .form-box__form-title
           = f.label :好きなカテゴリー２
         .form-box__input-box
-          = f.collection_select :category2_id, Tag.all, :id, :name, include_blank: true
+          = f.collection_select :tag2_id, Tag.all, :id, :name, include_blank: true
       .form-box
         .form-box__form-title
           = f.label :好きなジャンル１
