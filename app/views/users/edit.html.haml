@@ -1,7 +1,9 @@
-%body.create-account 
-  %h2 Movie-Review
+.header
+  = render "movies/header"
+.wrapper
+  = render "side-bar" 
   .regist-form
-    = form_with model:@preference, local: true  do |f| 
+    = form_with model: @preference, url: {controller: 'users', action: 'update' }, local: true  do |f| 
       .form-box
         .form-box__form-title
           = f.label :好きなカテゴリー１
@@ -23,4 +25,4 @@
         .form-box__input-box
           = f.collection_select :genre2_id, Genre.all, :id, :name, include_blank: true
       .actions
-        = f.submit "登録する" 
+        = f.submit "変更する" 

@@ -17,5 +17,13 @@ Rails.application.routes.draw do
     resources :movies
   end
   resources :tags, only: [:index, :new, :create]
-  resources :users 
+  resources :users do
+    member do
+      get :profile
+      get :review_all
+      get :movie_all
+      get :favorite
+      get :profile_edit 
+    end
+  end
 end

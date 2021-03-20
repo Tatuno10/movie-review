@@ -1,0 +1,17 @@
+%body.create-account 
+  %h2 Movie-Review
+  .regist-form
+    = form_with model:@user, url: user_registration_path, local: true do |f| 
+      %h1 アカウント情報を変更する
+      .form-box
+        .form-box__form-title
+          = f.label :名前, class: "regist-form__name-label"
+        .form-box__input-box
+          = f.text_field :name, autofocus: true, maxlength: "20", class: "regist-form__name-form", placeholder: "6文字以上の名前"
+      .form-box
+        .form-box__form-title
+          = f.label :メールアドレス, class: "regist-form__email-label" 
+        .form-box__input-box
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: "regist-form__mail-form", placeholder: "メールアドレス" 
+      .regist-form__form-submit
+        = f.submit "変更する", class: "regist-form__input-btn"

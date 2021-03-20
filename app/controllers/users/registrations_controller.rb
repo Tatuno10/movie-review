@@ -40,7 +40,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
     
   end
-
+  
   # GET /resource/edit
   # def edit
   #   super
@@ -65,15 +65,23 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
-   protected
+  protected
   
   def preference_params
     params.require(:preference).permit(
-      :category1_id,
-      :category2_id, 
+      :tag1_id,
+      :tag2_id, 
       :genre1_id,
       :genre2_id
     )
+  end
+
+  def update_resource(resource, params)
+    resource.update_without_password(params)
+  end
+
+  def after_update_path_for(resource)
+    user_path(@user.id)
   end
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params

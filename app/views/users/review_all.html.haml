@@ -1,0 +1,39 @@
+.header
+  = render "movies/header"
+.wrapper
+  = render "side-bar" 
+  .review-all
+    .review-all__title
+      レビュー 一覧
+    .review-all__review-list
+      - @reviews.each do |review|
+        .review-box
+          .review-box__top
+            .review-box__title
+              %span
+                映画のタイトル
+              = review.movie.title
+            .review-box__title
+              %span
+                タイトル
+              = review.title
+            .review-box__genre
+              %span
+                感想の種類
+              = review.genre.name
+            .review-box__point
+              %span
+                評価
+              = review.point
+            .review-box__point
+              %span
+                投稿者
+              = review.user.name
+            .review-box__other 
+              - if review.user_id = @user.id
+                = link_to "編集", edit_movie_review_path(review.movie_id, review.id)
+                = link_to "削除", movie_review_path(review.movie_id, review.id), method: :delete
+          .review-box__text
+            %span
+              レビュー
+            = review.review

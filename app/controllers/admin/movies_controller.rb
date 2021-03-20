@@ -1,6 +1,6 @@
 class Admin::MoviesController < ApplicationController
   before_action :if_not_admin
-  before_action :set_movie, only: [:edit, :destroy]
+  before_action :set_movie, only: [:edit, :update, :destroy]
   def new
     @movie = Movie.new
   end

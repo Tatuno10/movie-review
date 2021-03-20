@@ -5,22 +5,34 @@
   .user-show
     .user-show__top
       .user-show__title
-        = current_user.name
+        = @user.name
         さんのマイページ
     .user-show__main
       .user-show__genre 
-        .user-show__genre1
-          - if current_user.preference.category1_id 
-            好きなジャンル１
-            スリラー
+        .user-show__genre
+          - if @user.preference.genre1_id 
+            好きなジャンル1
+            = @user.preference.genre1.name
           - else
             = link_to "好きなジャンルを追加", "#"
-        .user-show__genre2
-          - if current_user.preference.category2_id 
-            好きなジャンル２
-            コメディ
+        .user-show__genre
+          - if @user.preference.genre2_id 
+            好きなジャンル2
+            = @user.preference.genre2.name
           - else
             = link_to "好きなジャンルを追加", "#"
+        .user-show__category
+          - if @user.preference.tag1_id 
+            好きなカテゴリー1
+            = @user.preference.tag1.name
+          - else
+            = link_to "好きなカテゴリー1を追加", "#"
+        .user-show__category
+          - if @user.preference.tag2_id 
+            好きなカテゴリー2
+            = @user.preference.tag2.name
+          - else
+            = link_to "好きなカテゴリー1を追加", "#"
       .user-show__recently-review
         最近のレビュー 
         - @reviews.first(3).each do |review|
@@ -47,7 +59,7 @@
                   投稿者
                 = review.user.name
               .review-box__other 
-                - if review.user_id = current_user.id
+                - if review.user_id = @user.id
                   = link_to "編集", edit_movie_review_path(review.movie_id, review.id)
                   = link_to "削除", movie_review_path(review.movie_id, review.id), method: :delete
             .review-box__text

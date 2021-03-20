@@ -2,7 +2,8 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_movie
   before_action :movies, only: [:edit, :update]
-  before_action :check_user, only: [:edit, :update, :destroy]
+  before_action :check_review, only: [:edit, :destroy]
+  before_action :check_user, only: [:edit,  :destroy]
 
   def index
     @review = Review.new
@@ -69,9 +70,16 @@ class ReviewsController < ApplicationController
     @moviesup = Movie.order("id DESC")
   end
 
+  def check_review
+    begin
+      @review = Review.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      redirect_to root_path, notice: "ご指定のレビューが見つかりません。"  
+    end
+  end
+
   def check_user
-    @review = Review.find(params[:id])
-    unless @review.user.id == current_user.id || current_user.admin?
+    unless @review.user_id == current_user.id || current_user.admin?
       redirect_to movie_path(@movie), notice: "レビューの投稿者ではありません。"
     end
   end
