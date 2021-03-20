@@ -9,18 +9,30 @@
         さんのマイページ
     .user-show__main
       .user-show__genre 
-        .user-show__genre1
+        .user-show__genre
           - if @user.preference.genre1_id 
-            好きなジャンル
+            好きなジャンル1
             = @user.preference.genre1.name
           - else
             = link_to "好きなジャンルを追加", "#"
-        .user-show__genre2
-          - if @user.preference.tag1_id 
-            好きなカテゴリー
-            = @user.preference.tag1.name
+        .user-show__genre
+          - if @user.preference.genre2_id 
+            好きなジャンル2
+            = @user.preference.genre2.name
           - else
             = link_to "好きなジャンルを追加", "#"
+        .user-show__category
+          - if @user.preference.tag1_id 
+            好きなカテゴリー1
+            = @user.preference.tag1.name
+          - else
+            = link_to "好きなカテゴリー1を追加", "#"
+        .user-show__category
+          - if @user.preference.tag2_id 
+            好きなカテゴリー2
+            = @user.preference.tag2.name
+          - else
+            = link_to "好きなカテゴリー1を追加", "#"
       .user-show__recently-review
         最近のレビュー 
         - @reviews.first(3).each do |review|

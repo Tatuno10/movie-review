@@ -2,3 +2,6 @@
   = render "movies/header"
 .wrapper
   = render "side-bar" 
+  .edit-profile 
+    編集する
+    = form_with model:  @profile, html: {class: "New-movie__form"}, local: true do |f|
