@@ -20,6 +20,19 @@ class UsersController < ApplicationController
     end
   end
 
+  def review_all
+    @reviews = Review.where(user_id: current_user.id)
+  end
+
+  def profile
+    
+  end
+
+  def profile_edit
+    
+  end
+
+
   private
   def movies
     @user = User.find(current_user.id)
