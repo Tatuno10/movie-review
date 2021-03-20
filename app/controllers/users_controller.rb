@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 
   private
   def movies
-    @user = current_user
+    @user = User.find(current_user.id)
     @q = Movie.ransack
     @tag = Tag.all
     @movies = Movie.all
@@ -31,8 +31,8 @@ class UsersController < ApplicationController
 
   def preference_params
     params.require(:preference).permit(
-      :category1_id,
-      :category2_id, 
+      :tag1_id,
+      :tag2_id, 
       :genre1_id,
       :genre2_id
     )
